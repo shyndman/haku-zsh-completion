@@ -51,7 +51,7 @@ __haku_recipes() {
       # If we don't have a description, synthesize one
       if [[ ! ("$line" =~ \#) ]]; then
         local recipe_name=`echo "$line" | sed --regexp-extended 's/^\s+([a-zA-Z0-9_-]+)[^$]*$/\1/'`
-        line="$recipe_name #(no description $recipe_name)"
+        line="$recipe_name #(no description for $recipe_name)"
       fi
 
       line=`echo "$line" | sed --regexp-extended 's/^\s*([a-zA-Z0-9_-]+)[^#]+?(#([^$]+))?$/\1:\3/'`
